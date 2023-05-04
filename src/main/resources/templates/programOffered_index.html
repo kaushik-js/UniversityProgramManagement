@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymleaf.org">
+<head>
+    <title>program_Scheduled System</title><link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <div class="container my-2">
+        
+        <h1>program Offered List</h1>
+        <a th:href="@{/showNewProgram_OfferedForm}" class="btn btn-primary btn-sm mb-3"> Add program_Offered </a>
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>S_Prog_Id</th>
+                    <th>PName</th>
+                    <th>Location</th>
+                    <th>Start_Date</th>
+                    <th>End_Date</th>
+                    <th>S_per_week</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="program_Offered : ${listProgram_Offered}">
+                    <td th:text="${program_Offered.sc_prog_id}"></td>
+                    <td th:text="${program_Offered.prog_name}"></td>
+                    <td th:text="${program_Offered.location}"></td>
+                    <td th:text="${program_Offered.start_date}"></td>
+                    <td th:text="${program_Offered.end_date}"></td>
+                    <td th:text="${program_Offered.ss_per_week}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

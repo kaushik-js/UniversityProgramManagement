@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymleaf.org">
+<head>
+    <title>program_Scheduled System</title><link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" th:href="@{/viewStatus}">Application Status</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " th:href="@{/new_ps}">Program Scheduled</a>
+              </li>
+            <li class="nav-item ">
+              <a class="nav-link " th:href="@{/Login}">Admin</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container my-2" style="text-align: center">
+        
+        <h1>program_Scheduled List</h1>
+        <a th:href="@{/showNewProgram_ScheduledForm}" class="btn btn-primary btn-sm mb-3"> Add program_Scheduled </a>
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>S_Prog_Id</th>
+                    <th>PName</th>
+                    <th>Location</th>
+                    <th>Start_Date</th>
+                    <th>End_Date</th>
+                    <th>S_per_week</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="program_Scheduled : ${listProgram_Scheduleds}">
+                    <td th:text="${program_Scheduled.S_Prog_Id}"></td>
+                    <td th:text="${program_Scheduled.PName}"></td>
+                    <td th:text="${program_Scheduled.Location}"></td>
+                    <td th:text="${program_Scheduled.Start_Date}"></td>
+                    <td th:text="${program_Scheduled.End_Date}"></td>
+                    <td th:text="${program_Scheduled.S_per_week}"></td>
+                    <td><a th:href="@{/deleteProgram/{id}(id=${program_Scheduled.id})}" class="btn btn-primary btn-sm mb-3"> Delete </a></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

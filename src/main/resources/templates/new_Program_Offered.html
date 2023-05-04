@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymleaf.org">
+<head>
+    <title>Applicant Management System</title><link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container my-2">
+        <h1>Program Offered</h1>
+        <hr>
+        <h2>Save Program Offered</h2>
+        <form action="#" th:action="@{/saveProgram_Offered}" th:object="${program_Offered}" method="POST">
+            <input type="text" th:field="*{sc_prog_id}" placeholder="Program ID" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{prog_name}" placeholder="Program Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{location}" placeholder="Location" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{start_date}" placeholder="Start date" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{end_date}" placeholder="End date" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{ss_per_week}" placeholder="schedule per week" class="form-control mb-4 col-4">
+            <button type="submit" class="btn btn-info col-2"> Submit</button> 
+
+        </form>
+        <hr>
+		<a th:href = "@{/program_Scheduled}"> Back to Program Offered List</a>
+    </div>
+</body>
+</html>

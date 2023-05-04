@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymleaf.org">
+<head>
+    <title>Applicant Management System</title><link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+  <link rel="stylesheet" media="screen" th:href="@{/css/app.css}"/>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" th:href="@{/viewStatus}">Application Status</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " th:href="@{/new_ps}">Program Scheduled</a>
+              </li>
+            <li class="nav-item ">
+              <a class="nav-link " th:href="@{/Login}">Admin</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container my-2 " style="text-align: center">
+        <h1>applicant Management System</h1>
+        <hr>
+        <h2>New applicant</h2>
+        <form action="#" th:action="@{/saveApplicant}" th:object="${applicant}" method="POST">
+            <input style="margin-left: 375px;" type="text" th:field="*{fullName}" placeholder="Applicant Full Name" class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;"  type="text" th:field="*{dob}" placeholder="applicant Date of Birth" class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{h_quli}" placeholder="applicant Highest Qulification" class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{mObt}" placeholder="applicant Marks Obtained" class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{goals}" placeholder="applicant Goals" class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{progId}" placeholder="applicant Program Id" class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{status}" placeholder="applicant Status" disabled class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{dobInt}" placeholder="applicant Date of Interview" disabled class="form-control mb-4 col-4">
+            <input style="margin-left: 375px;" type="text" th:field="*{email}" placeholder="applicant email id" class="form-control mb-4 col-4">
+            <button type="submit" class="btn btn-info col-2"> Submit</button> 
+
+        </form>
+        <hr>
+    </div>
+</body>
+</html>

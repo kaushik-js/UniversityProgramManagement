@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymleaf.org">
+<head>
+    <title>Applicant Management System</title><link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container my-2">
+        <h1>Program Scheduled</h1>
+        <hr>
+        <h2>Save schedule</h2>
+        <form action="#" th:action="@{/saveProgram_Scheduled}" th:object="${program_Scheduled}" method="POST">
+            <input type="text" th:field="*{S_Prog_Id}" placeholder="ID" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{PName}" placeholder="Program Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{Location}" placeholder="Location" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{Start_Date}" placeholder="Start date" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{End_Date}" placeholder="End date" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{S_per_week}" placeholder="schedule per week" class="form-control mb-4 col-4">
+            <button type="submit" class="btn btn-info col-2"> Submit</button> 
+
+        </form>
+        <hr>
+		<a th:href = "@{/ps}"> Back to Program Scheduled List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymleaf.org">
+<head>
+    <title>Participant Management System</title><link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+    
+    <div class="container my-2">
+        
+        <h1>Participant List</h1>
+        <a th:href="@{/showNewParticipantForm}" class="btn btn-primary btn-sm mb-3"> Add Participant </a>
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Email</th>
+                    <th>Application ID</th>
+                    <th>Scheduled Program ID</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="participant : ${listParticipants}">
+                    <td th:text="${participant.roll_no}"></td>
+                    <td th:text="${participant.email}"></td>
+                    <td th:text="${participant.app_id}"></td>
+                    <td th:text="${participant.sc_prog_id}"></td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

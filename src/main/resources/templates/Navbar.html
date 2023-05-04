@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" th:href="@{/css/app.css}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>UAS</title>
+    <!-- <style th:inline="text">
+        body{
+            background: url([[@{../static/images/download.jpg}]])
+                        no-repeat center center fixed;
+        }
+    </style> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" th:href="@{/viewStatus}">Application Status</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " th:href="@{/new_ps}">Program Scheduled</a>
+              </li>
+            <li class="nav-item ">
+              <a class="nav-link " th:href="@{/Login}">Admin</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      
+      
+      <div class="bg-image">
+        <img src="../static/images/download.jpg" width="100%" th:src="@{images/download.jpg}"/>
+      </div>
+      <div class="bg-text">
+        <h1>University Admission System</h1>
+        <a th:href="@{/viewStatus}" class="btn btn-primary mb-3 my-3">Applicant Status </a>
+        <p></p>
+        <a th:href="@{/new_ps}" class="btn btn-primary  mb-3 my-3"> Programs Sheduled by University </a>
+        <p></p>
+        <a th:href="@{/Login}" class="btn btn-primary  mb-3 my-3"> Login as Admin </a>
+      </div>
+    
+</body>
+</html>
