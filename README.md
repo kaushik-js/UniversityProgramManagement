@@ -1,3 +1,3 @@
-# SpringCrud-Thymeleaf
+#University Program Management 
 
-Spring Boot CRUD Web Application with Thymeleaf, Spring MVC, Spring Data JPA, Hibernate, MySQL
+SpringBoot Web Application with Thymeleaf, Spring MVC, Spring Data JPA, Hibernate, MySQL
